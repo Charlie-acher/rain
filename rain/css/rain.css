@@ -415,7 +415,8 @@ img {
 
 .answer #gameon,
 #gameover,
-.answer2 #gameon2 {
+.answer2 #gameon2,
+#gameon3 {
 	font-size: 2.5vw;
 	color: #3f4a52;
 	font-family: 华文中宋;
