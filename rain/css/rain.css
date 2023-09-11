@@ -359,7 +359,8 @@ img {
 }
 
 .learnTest #test1,
-.learnTest #test3 {
+.learnTest #test3,
+.learnTest #test2 {
 	width: 45vw;
 	height: 8.5vh;
 	font-size: 2vw;
