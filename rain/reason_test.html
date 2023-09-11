@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/rain.css" type="text/css">
+    <title>暴雨背后的学问</title>
+    <style>
+        body {
+            background: url(img/city.png) no-repeat;
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#selectB,#select2B").click(function () {
+                $("#sB,#s2B").show();
+                $("#sA,#s2A,#sC,#s2C,#sD,#s2D").hide();
+                $(".answer").fadeIn(1000);
+                $("#gameover").fadeIn(1000);
+            })
+            $("#selectA").click(function () {
+                $("#sA").show();
+                $("#sB,#sC,#sD").hide();
+                $(".answer").fadeIn(1000);
+                $("#gameon").fadeIn(1000);
+            })
+            $("#select2A").click(function () {
+                $("#s2A").show();
+                $("#s2B,#s2C,#s2D").hide();
+                $(".answer").fadeIn(1000);
+                $("#gameover").fadeIn(1000);
+            })
+            $("#selectC").click(function () {
+                $("#sC").show();
+                $("#sA,#sB,#sD").hide();
+                $(".answer").fadeIn(1000);
+                $("#gameover").fadeIn(1000);
+            })
+            $("#select2C").click(function () {
+                $("#s2C").show();
+                $("#s2A,#s2B,#s2D").hide();
+                $(".answer2").fadeIn(1000);
+                $("#gameon2").fadeIn(1000);
+            })
+            $("#selectD,#select2D").click(function () {
+                $("#sD,#s2D").show();
+                $("#sA,#s2A,#sB,#s2B,#sC,#s2C").hide();
+                $(".answer").fadeIn(1000);
+                $("#gameover").fadeIn(1000);
+            })
+            $("#next4").click(function () {
+                $(".answer").fadeOut(300);
+                $("#gameon").fadeOut(300);
+                $("#test1").hide();
+                $("#test3").fadeIn(1000);
+            })
+            $("#next5").click(function () {
+                $(".answer").fadeOut(300);
+                $("#gameover").fadeOut(300);
+            })
+            $("#next6").click(function () {
+                $(".answer2").fadeOut(300);
+                $("#gameon2").fadeOut(300);
+                $("#test2").fadeOut(1000);
+                $(".learnTest").fadeOut(1000);
+                $(".reward").fadeIn(1000);
+            })
+        })
+        function change() {
+            document.getElementById("return").style.transform = "scale(1.3)";
+        }
+        function reset() {
+            document.getElementById("return").style.transform = "scale(1)";
+        }
+        function change2() {
+            document.getElementById("nextstep").style.transform = "scale(1.3)";
+        }
+        function reset2() {
+            document.getElementById("nextstep").style.transform = "scale(1)";
+        }
+        function change3() {
+            document.getElementById("next4").style.transform = "scale(1.3)";
+        }
+        function reset3() {
+            document.getElementById("next4").style.transform = "scale(1)";
+        }
+
+    </script>
+    <div class="learn_test">
+        <a href="topic.html">
+            <img src="img/return.png" id="return" onmouseover="change()" onmouseout="reset()" />
+        </a>
+        <a href="#">
+            <img src="img/nextstep.png" id="nextstep" onmouseover="change2()" onmouseout="reset2()" />
+        </a>
+        <div class="learnTest">
+            <img src="img/test_icon.png">
+            <img src="img/test_icon2.png" style="position: absolute;top: 62vh;left: 58vw;">
+            <div id="test1">
+                <p>与人类关系最密切，有大循环之称的是 ( )</p>
+                <p id="selectA">A.发生领域最大的海路间循环</p><img src="img/select.png" id="sA">
+                <p id="selectB">B.发生在人类居住陆地和陆地之间的内陆循环</p><img src="img/select.png" id="sB">
+                <p id="selectC">C.每年循环量最大的海上内循环</p><img src="img/select.png" id="sC">
+                <p id="selectD">D.地球水和太空水的循环</p><img src="img/select.png" id="sD">
+            </div>
+            <div id="test3" style="display: none;">
+                <p>下列说法中正确的是 ( )</p>
+                <p id="select2A">A.在水的三态中，固态水的数量最多</p><img src="img/select.png" id="s2A">
+                <p id="select2B">B.热带地区没有固体状态的水</p><img src="img/select.png" id="s2B">
+                <p id="select2C">C.世界上各种水体之间，具有相互补给的关系</p><img src="img/select.png" id="s2C">
+                <p id="select2D">D.我国内流区域没有参与海路间循环</p><img src="img/select.png" id="s2D">
+            </div>
+        </div>
+
+        <div class="reward">
+            <p>恭喜完成第二阶段测试！！</p>
+        </div>
+
+        <div class="answer">
+            <div id="gameon" style="display: none;">
+                答案正确！
+                <img src="img/next4.png" id="next4" onmouseover="change3()" onmouseout="reset3()">
+            </div>
+            <div id="gameover" style="display: none;">
+                答案错误！<br>
+                请重新作答
+                <img src="img/next4.png" id="next5" onmouseover="change3()" onmouseout="reset3()">
+            </div>
+        </div>
+        <div class="answer2">
+            <div id="gameon2" style="display: none;">
+                答案正确！<br>
+                <img src="img/next4.png" id="next6" onmouseover="change3()" onmouseout="reset3()">
+            </div>
+            <div id="gameover" style="display: none;">
+                答案错误！<br>
+                请重新作答
+                <img src="img/next4.png" id="next5" onmouseover="change3()" onmouseout="reset3()">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

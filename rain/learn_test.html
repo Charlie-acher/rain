@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/rain.css" type="text/css">
+	<title>暴雨背后的学问</title>
+	<style>
+		body {
+			background: url(img/city2.png) no-repeat;
+			background-size: 100% 100%;
+		}
+	</style>
+</head>
+
+<body>
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$("#selectA,#select2A").click(function () {
+				$("#sA,#s2A").show();
+				$("#sB,#s2B,#sC,#s2C,#sD,#s2D").hide();
+				$(".answer").fadeIn(1000);
+				$("#gameover").fadeIn(1000);
+			})
+
+			$("#selectB").click(function () {
+				$("#sB").show();
+				$("#sA,#sC,#sD").hide();
+				$(".answer").fadeIn(1000);
+				$("#gameover").fadeIn(1000);
+			})
+			$("#select2B").click(function () {
+				$("#s2B").show();
+				$("#s2A,#s2C,#s2D").hide();
+				$(".answer2").fadeIn(1000);
+				$("#gameon2").fadeIn(1000);
+			})
+			$("#selectC").click(function () {
+				$("#sC").show();
+				$("#sA,#sB,#sD").hide();
+				$(".answer").fadeIn(1000);
+				$("#gameon").fadeIn(1000);
+			})
+			$("#select2C").click(function () {
+				$("#s2C").show();
+				$("#s2A,#s2B,#s2D").hide();
+				$(".answer").fadeIn(1000);
+				$("#gameover").fadeIn(1000);
+			})
+			$("#selectD,#select2D").click(function () {
+				$("#sD,#s2D").show();
+				$("#sA,#s2A,#sB,#s2B,#sC,#s2C").hide();
+				$(".answer").fadeIn(1000);
+				$("#gameover").fadeIn(1000);
+			})
+			$("#next4").click(function () {
+				$(".answer").fadeOut(300);
+				$("#gameon").fadeOut(300);
+				$("#test1").hide();
+				$("#test2").fadeIn(1000);
+			})
+			$("#next5").click(function () {
+				$(".answer").fadeOut(300);
+				$("#gameover").fadeOut(300);
+			})
+			$("#next6").click(function () {
+				$("#test2").hide();
+				$("#test3").fadeIn(1000);
+			})
+			$("#next7").click(function () {
+				$(".answer2").fadeOut(300);
+				$("#gameon2").fadeOut(300);
+				$("#test3").fadeOut(1000);
+				$(".learnTest").fadeOut(1000);
+				$(".reward").fadeIn(1000);
+			})
+		})
+		function change() {
+			document.getElementById("return").style.transform = "scale(1.3)";
+		}
+		function reset() {
+			document.getElementById("return").style.transform = "scale(1)";
+		}
+		function change2() {
+			document.getElementById("nextstep").style.transform = "scale(1.3)";
+		}
+		function reset2() {
+			document.getElementById("nextstep").style.transform = "scale(1)";
+		}
+		function change3() {
+			document.getElementById("next4", "next6").style.transform = "scale(1.3)";
+		}
+		function reset3() {
+			document.getElementById("next4", "next6").style.transform = "scale(1)";
+		}
+
+	</script>
+	<div class="learn_test">
+		<a href="topic.html">
+			<img src="img/return.png" id="return" onmouseover="change()" onmouseout="reset()" />
+		</a>
+		<a href="reason.html">
+			<img src="img/nextstep.png" id="nextstep" onmouseover="change2()" onmouseout="reset2()" />
+		</a>
+		<div class="learnTest">
+			<img src="img/test_icon.png">
+			<img src="img/test_icon2.png" style="position: absolute;top: 62vh;left: 58vw;">
+			<div id="test1">
+				<p>某地一天的降水量达到49mm，它应该是 ( )</p>
+				<p id="selectA">A.小雨</p><img src="img/select.png" id="sA">
+				<p id="selectB">B.中雨</p><img src="img/select.png" id="sB">
+				<p id="selectC">C.大雨</p><img src="img/select.png" id="sC">
+				<p id="selectD">D.暴雨</p><img src="img/select.png" id="sD">
+			</div>
+			<div id="test2" style="display: none;">
+				<p id="title">试着把答案拖动到正确位置吧！！</p>
+				<p>等降水量线图中</p>
+				<p>等降水量线越密集表示_________________</p>
+				<p>越稀疏表示_________________</p>
+				<div id="box1">降水量差异小</div>
+				<div id="box2">降水量差异大</div>
+				<img src="img/next4.png" id="next6" onmouseover="change3()" onmouseout="reset3()">
+			</div>
+			<div id="test3" style="display: none;">
+				<p>下列天气现象中，( )不是降水的形式？</p>
+				<p id="select2A">A.暴雨</p><img src="img/select.png" id="s2A">
+				<p id="select2B">B.冰冻</p><img src="img/select.png" id="s2B">
+				<p id="select2C">C.大雪</p><img src="img/select.png" id="s2C">
+				<p id="select2D">D.冰雹</p><img src="img/select.png" id="s2D">
+			</div>
+		</div>
+
+		<div class="reward">
+			<p>恭喜完成第一阶段测试！！</p>
+		</div>
+
+		<div class="answer">
+			<div id="gameon" style="display: none;">
+				答案正确！<br>
+				日降水量为25mm-50mm属于大雨
+				<img src="img/next4.png" id="next4" onmouseover="change3()" onmouseout="reset3()">
+			</div>
+			<div id="gameover" style="display: none;">
+				答案错误！<br>
+				请重新作答
+				<img src="img/next4.png" id="next5" onmouseover="change3()" onmouseout="reset3()">
+			</div>
+		</div>
+		<div class="answer2">
+			<div id="gameon2" style="display: none;">
+				答案正确！<br>
+				冰冻不是降水的形式
+				<img src="img/next4.png" id="next7" onmouseover="change3()" onmouseout="reset3()">
+			</div>
+			<div id="gameover" style="display: none;">
+				答案错误！<br>
+				请重新作答
+				<img src="img/next4.png" id="next5" onmouseover="change3()" onmouseout="reset3()">
+			</div>
+		</div>
+	</div>
+	<script>
+		window.onload = function () {
+			var box1 = document.getElementById("box1");
+			var box2 = document.getElementById("box2");
+			drag(box1);
+			drag(box2);
+		}
+		// drag:移动函数；obj:对象 
+		function drag(obj) {
+			// 鼠标按下函数
+			obj.onmousedown = function (event) {
+				event = event || window.event;
+				// 鼠标点击时对事件进行捕获
+				// if(box1.setCapture){
+				//      box1.setCapture();
+				// }
+				// 可以简写为
+				obj.setCapture && obj.setCapture();
+				// 调整鼠标和div的位置问题
+				// div的偏移量=鼠标.clentx -元素.offsetLeft
+				// div的偏移量=鼠标.clentY -元素.offsetTop
+				var ol = event.clientX - obj.offsetLeft;
+				var ot = event.clientY - obj.offsetTop;
+				// onmousemove应该在onmousedown里面，点击之后才会进行拖拽
+				//鼠标移动函数： 为document绑定onmousemove
+				document.onmousemove = function (event) {
+					event = event || window.event;
+					var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+					var scrollLeft = document.body.scrollLeft || document.documentElement.scrollLeft;
+					var left = event.clientX + scrollLeft - ol;
+					var top = event.clientY + scrollTop - ot;
+					var isConnected = false;
+					//设置 box1的位置
+					obj.style.left = left + "px";
+					obj.style.top = top + "px";
+					if ((left >= 292 && left <= 296) && (top >= 115 && top <= 118)) {
+						isConnected = true;
+					}
+					else if ((left >= 150 && left <= 160) && (top >= 180 && top <= 185)) {
+						isConnected = true;
+					}
+					if (isConnected == true) {
+						obj.style.backgroundColor = "#86bb27";
+						obj.onmousedown = null;
+						document.onmousemove = null;
+						document.getElementById("next6").style.display = "block";
+					}
+				}
+			};
+			// 鼠标松开:  为document绑定onmouseup
+			document.onmouseup = function () {
+				// 直接取消doument的onmousemove事件
+				document.onmousemove = null;
+				// 直接取消doument的onmouseup事件
+				//  防止鼠标在其大地放松改的时候也触发该函数
+				document.onmouseup = null;
+				//鼠标松开时，取消对事件捕获 
+				box1.releaseCapture && box1.releaseCapture();
+			};
+			return false;
+		};
+	</script>
+</body>
+
+</html>

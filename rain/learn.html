@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/rain.css" type="text/css">
+	<title>暴雨背后的学问</title>
+	<style>
+		body {
+			background: url(img/city2.png) no-repeat;
+			background-size: 100% 100%;
+		}
+	</style>
+</head>
+
+<body>
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$("#dialogue").click(function () {
+				i = num;
+			})
+			$("#next").click(function () {
+				$(".dialogue,.reporter").fadeOut(1000);
+				$(".professor,.dialogue2,#next2").fadeIn(1000);
+			})
+			$("#next2").click(function () {
+				$(".dialogue2,.professor,#next2").fadeOut(1000);
+				$(".introduce").fadeIn(1000);
+				$("#label1,#label2,#label3,#label4").fadeIn(1000);
+				$("#water1,#water2,#water3").fadeIn(1000);
+				$("#return,#nextstep").fadeIn(500);
+			})
+			$("#label1").click(function () {
+				$("#water1,#water2,#water3").fadeIn(500);
+				$(".rainstorm1,.rainstorm2,.waterline,.waterlogging").fadeOut(500);
+			})
+			$("#label2").click(function () {
+				$("#water1,#water2,#water3").fadeOut(500);
+				$(".rainstorm1,.rainstorm2").fadeIn(500);
+				$(".waterline,.waterlogging").fadeOut(500);
+			})
+			$("#label3").click(function () {
+				$("#water1,#water2,#water3").fadeOut(500);
+				$(".rainstorm1,.rainstorm2").fadeOut(500);
+				$(".waterline").fadeIn(500);
+				$(".waterlogging").fadeOut(500);
+			})
+			$("#label4").click(function () {
+				$("#water1,#water2,#water3").fadeOut(500);
+				$(".rainstorm1,.rainstorm2").fadeOut(500);
+				$(".waterline").fadeOut(500);
+				$(".waterlogging").fadeIn(500);
+			})
+		})
+		function change() {
+			document.getElementById("next").style.transform = "scale(1.3)";
+			document.getElementById("return").style.transform = "scale(1.3)";
+		}
+		function reset() {
+			document.getElementById("next").style.transform = "scale(1)";
+			document.getElementById("return").style.transform = "scale(1)";
+		}
+		function change2() {
+			document.getElementById("next2").style.transform = "scale(1.3)";
+			document.getElementById("nextstep").style.transform = "scale(1.3)";
+		}
+		function reset2() {
+			document.getElementById("next2").style.transform = "scale(1)";
+			document.getElementById("nextstep").style.transform = "scale(1)";
+		}
+		function change3() {
+			document.getElementById("label1").style.transform = "scale(1.2)";
+			document.getElementById("label1").src = "img/label1-1.png";
+			document.getElementById("label2").style.transform = "scale(1)";
+			document.getElementById("label2").src = "img/label2.png";
+			document.getElementById("label3").style.transform = "scale(1)";
+			document.getElementById("label3").src = "img/label3.png";
+			document.getElementById("label4").style.transform = "scale(1)";
+			document.getElementById("label4").src = "img/label4.png";
+		}
+		function change4() {
+			document.getElementById("label1").style.transform = "scale(1)";
+			document.getElementById("label1").src = "img/label1.png";
+			document.getElementById("label2").style.transform = "scale(1.2)";
+			document.getElementById("label2").src = "img/label2-1.png";
+			document.getElementById("label3").style.transform = "scale(1)";
+			document.getElementById("label3").src = "img/label3.png";
+			document.getElementById("label4").style.transform = "scale(1)";
+			document.getElementById("label4").src = "img/label4.png";
+		}
+		function change5() {
+			document.getElementById("label1").style.transform = "scale(1)";
+			document.getElementById("label1").src = "img/label1.png";
+			document.getElementById("label2").style.transform = "scale(1)";
+			document.getElementById("label2").src = "img/label2.png";
+			document.getElementById("label3").style.transform = "scale(1.2)";
+			document.getElementById("label3").src = "img/label3-1.png";
+			document.getElementById("label4").style.transform = "scale(1)";
+			document.getElementById("label4").src = "img/label4.png";
+		}
+		function change6() {
+			document.getElementById("label1").style.transform = "scale(1)";
+			document.getElementById("label1").src = "img/label1.png";
+			document.getElementById("label2").style.transform = "scale(1)";
+			document.getElementById("label2").src = "img/label2.png";
+			document.getElementById("label3").style.transform = "scale(1)";
+			document.getElementById("label3").src = "img/label3.png";
+			document.getElementById("label4").style.transform = "scale(1.2)";
+			document.getElementById("label4").src = "img/label4-1.png";
+		}
+	</script>
+	<img src="img/professor.png" class="professor" style="display: none;" />
+	<img src="img/reporter.png" class="reporter" />
+	<div class="dialogue">
+		<div id="dialogue"></div>
+		<img src="img/next.png" id="next" onmouseover="change()" onmouseout="reset()" />
+	</div>
+	<div class="dialogue2">
+		<div id="dialogue2"></div>
+		<img src="img/next2.png" id="next2" onmouseover="change2()" onmouseout="reset2()" style="display: none;" />
+	</div>
+	<a href="topic.html">
+		<img src="img/return.png" id="return" style="display: none;" onmouseover="change()" onmouseout="reset()" />
+	</a>
+	<a href="learn_test.html">
+		<img src="img/nextstep.png" id="nextstep" style="display: none;" onmouseover="change2()"
+			onmouseout="reset2()" />
+	</a>
+	<div class="introduce">
+		<img src="img/label1-1.png" id="label1" style="display: none; transform: scale(1.2);" onclick="change3()" />
+		<img src="img/label2.png" id="label2" style="display: none;" onclick="change4()" />
+		<img src="img/label3.png" id="label3" style="display: none;" onclick="change5()" />
+		<img src="img/label4.png" id="label4" style="display: none;" onclick="change6()" />
+		<div id="water1" style="display: none;">
+			<img src="img/water1.jpg" />
+			<p>2021年7.17-7.22 <br /> 河南省39个市县累计降雨量达到当地全年<font color="brown" size="5">降水量</font>的一半以上</p>
+		</div>
+		<div id="water2" style="display: none;">
+			<img src="img/water2.jpg" />
+			<p>直到7月28日 <br /> 河南省暴雨已造成郑州、新乡等16个市、150个县市区、1366.43万人受灾，有73人遇难</p>
+		</div>
+		<div id="water3" style="display: none;">
+			<img src="img/water3.jpg" />
+			<p>河流，水域<font color="brown" size="5">水位</font>上涨多处水库出现管涌、裂缝、决口等险情;多个城市城区发生严重<font color="brown" size="5">内涝
+				</font>;严重影响市民生活</p>
+		</div>
+		<div class="rainstorm1" style="display: none;">
+			<p>
+				<font color="brown" size="5">小雨</font>: 1d (或24h) 降雨量小于10mm
+			</p>
+			<p>
+				<font color="brown" size="5">中雨</font>: 1d (或24h) 降雨量小于10~25mm
+			</p>
+			<p>
+				<font color="brown" size="5">大雨</font>: 1d (或24h) 降雨量小于25~50mm
+			</p>
+			<img src="img/rainstorm1.png" />
+		</div>
+		<div class="rainstorm2" style="display: none;">
+			<img src="img/rainstorm2.png" />
+			<p>
+				<font color="brown" size="5">暴雨</font>: 1d (或24h) 降雨量小于50~100mm
+			</p>
+			<p>
+				<font color="brown" size="5">大暴雨</font>: 1d (或24h) 降雨量小于100~250mm
+			</p>
+			<p>
+				<font color="brown" size="5">特大暴雨</font>: 1d (或24h) 降雨量小于250mm以上
+			</p>
+		</div>
+		<div class="waterline" style="display: none;">
+			<video controls muted src="waterline.mp4"></video>
+		</div>
+		<div class="waterlogging" style="display: none;">
+			<img src="img/waterlogging.jpg" />
+			<p>城市内涝是指由于强降水或连续性降水<font color="brown" size="6">超过</font>城市排水能力
+				致使城市内产生积水灾害的现象内涝严重;<br>
+				湖泊蓄水容积减少，汛期湖面水位上升、易破吁造成灾害;<br>
+				围垦削减了湖泊的调蓄功能，导致洪涝灾害频繁发生。</p>
+		</div>
+	</div>
+	<script>
+		var text = "极端强降雨导致的灾害，牵动着国人的心。我们请来了本次河南抗洪的专家，来为大家讲解河南此次灾情。";
+		var num = text.length;
+		var i = 0;
+		function show() {
+			var shower = text.substr(0, i);
+			document.getElementById("dialogue").innerHTML = shower;
+			i++;
+			if (i + 1 >= num) {
+				clearInterval("done");
+			}
+		}
+		var done = setInterval("show()", 150);
+		var text2 = "大家好，接下来让我来为大家介绍河南本次灾情。";
+		var num2 = text2.length;
+		var j = 0;
+		function show2() {
+			var shower2 = text2.substr(0, j);
+			document.getElementById("dialogue2").innerHTML = shower2;
+			j++;
+			if (j + 1 >= num2) {
+				clearInterval("done2");
+			}
+		}
+		var done2 = setInterval("show2()", 150);
+	</script>
+</body>
+
+</html>
